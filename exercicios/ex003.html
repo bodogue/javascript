@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 97vh;
+            width: 97vw;
+            background-color: gray;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+
+        div {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            
+            
+            border: 2px solid white;
+            width: 320px;
+            height: 130px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Ola, Mundo!</h1>
+        <p>Ja me livrei da maldicao</p>
+    </div>
+
+    <script>
+        // (number + number) Adição
+        // (string + string) Concatenação
+
+        var nome = window.prompt('Olá, qual o seu nome?')
+        var idade = Number(window.prompt(`Seja bem vindo, ${nome}! Quantos anos voçê tem?`))
+        var media = Number(window.prompt(`Ok ${nome}, agora me fale qual a foi a sua média bimestral:`))
+        var result = media >= 60 ?'Aprovado' :'Reprovado'
+        var maioridade = idade >= 18 ?'maior' :'menor'
+        window.alert(`Ok ${nome}, voçê tem ${idade} anos de idade, logo voçê é de ${maioridade}, tirou ${media} no bimestre e está ${result}!`)
+    </script>
+</body>
+</html>
