@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 96vh;
+            width: 96vw;
+            position: relative;
+            background-color: black;
+            color: white;
+        }
+
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            text-shadow: 1px 1px 1px black;
+            padding-top: 190px;
+            text-align: center;
+            font: 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="area" o>
+            Interaja...
+        </div>
+    </main>
+    <script>
+        var a = window.document.querySelector('div#area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() {
+            a.style.backgroundColor = '#00f200'
+            a.innerText = 'Clicou'
+        }
+        function entrar() {
+            a.style.backgroundColor = '#004800'
+            a.innerText = 'Entrou'
+        }
+        function sair() {
+            a.style.backgroundColor = 'green'
+            a.innerText = 'Saiu'
+        }
+    </script>
+</body>
+</html>

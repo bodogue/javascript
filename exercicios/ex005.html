@@ -6,29 +6,54 @@
     <title>DOM</title>
 </head>
 <style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
     body {
+        height: 96vh;
+        width: 96vw;
+
         background-color: rgb(0, 0, 0);
         color: rgb(255, 255, 255);
         font: normal 1.1em Arial;
+        position: relative;
+    }
+
+    main {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        position: relative;
+        text-align: center;
+        border: 1px solid white;
+        width: 370px;
+        padding: 20px;
+    }
+
+    div {
+        margin: auto;
+        text-align: left;
+        padding: 5px;
     }
 </style>
 <body>
-    <h1>Iniciando no DOM</h1>
-    <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
-
-    <div >Clique aqui</div>
-    <div id="msgId">Clique aqui</div>
-    <div class="msgClass">Clique aqui</div>
-    <div name="msgName">Clique aqui</div>
-    <div id="msg">Clique aqui</div>
-    <div class="msg">Clique aqui</div>
+    <main>
+        <h1>Iniciando no DOM</h1>
+        <p>Aqui vai o resultado</p>
+        <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+        <div>Clique aqui</div>
+        <div id="msgId">Clique aqui</div>
+        <div class="msgClass">Clique aqui</div>
+        <div name="msgName">Clique aqui</div>
+        <div id="msg">Clique aqui</div>
+        <div class="msg">Clique aqui</div>
+    </main>
     
     <script>
-        var corpo = window.document.body 
-        var p1 = window.document.getElementsByTagName('p')[1]
-        window.document.write('Esta escrito assim: ' + p1.innerHTML)
-
         var divTag = window.document.getElementsByTagName('div')[0]
         divTag.style.backgroundColor = '#00ffff'
         divTag.style.width = '270px'
