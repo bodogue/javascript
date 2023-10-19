@@ -111,8 +111,9 @@
             var vel = Number(txtv.value)
             res.innerHTML = `<p>Sua velocidade atual e de <strong>${vel}km/h</strong></p>`
             var multa = (vel - 60) * 11.5 + 50
+            var multaReal = multa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
             if (vel > 60) {
-                res.innerHTML += `<p>Voce passou acima da velocidade permitida. <strong>MULTADO</strong> em ${multa} Reais!</p>`
+                res.innerHTML += `<p>Voce passou acima da velocidade permitida. <strong>MULTADO</strong> em ${multaReal} Reais!</p>`
                 res.style.display = 'block'
             } else {
                 res.innerHTML += `<p>Voce passou na velocidade permitida. <strong>LIBERADO!</strong></p>`
