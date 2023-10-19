@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        html, body {
+            height: 97vh;
+            width: 97vw;
+            position: relative;
+            background-color: black;
+        }
+
+        main  {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: rgb(52, 52, 52);
+            color: white;
+            width: 600px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid orange;
+            border-radius: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            border-bottom: 1px solid orange;
+            margin: 0px -20px 10px -20px;
+        }
+
+        i {
+            padding: 2px 0px 0px 5px;
+            margin-right: -27px;
+        }
+
+        #div-input {
+            width: calc(100% - 320px);
+            height: 35px;
+            padding-top: 2px;
+            background-color: black;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        #div-input input {
+            padding-left: 10px;
+            margin-left: 32px;
+            height: 31px;
+            width: 200px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        #div-submit input {
+            width: 140px;
+            height: 35px;
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+
+        #res {
+            font-size: 1.2em;
+            margin-top: 30px;
+            display: none;
+            border: 2px solid #2a2a2a;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Sistema de Multas</h1>
+            <label for="txtvel">Digite a velocidade(km/h) abaixo:</label>
+            <form action="cadastro.php" class="container">
+                <div id="div-input" class="container">
+                    <i class="material-icons">speed</i>
+                    <input type="number" name="txtvel" id="txtvel" placeholder="Velocidade atual">
+                </div>
+                <div id="div-submit">
+                    <input type="button" value="Verificar" onclick="calcular()">
+                </div>
+            </form>
+            <div id="res"></div>
+        </div>
+    </main>
+    <script>
+        function calcular() {
+            var txtv = document.querySelector('input#txtvel')
+            var res = document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual e de <strong>${vel}km/h</strong></p>`
+            var multa = (vel - 60) * 11.5 + 50
+            if (vel > 60) {
+                res.innerHTML += `<p>Voce passou acima da velocidade permitida. <strong>MULTADO</strong> em ${multa} Reais!</p>`
+                res.style.display = 'block'
+            } else {
+                res.innerHTML += `<p>Voce passou na velocidade permitida. <strong>LIBERADO!</strong></p>`
+                res.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
