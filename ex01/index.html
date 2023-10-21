@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container {
+            border-radius: 10px;
+            background-color: white;
+            width: 300px;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px 0px 30px 0px;
+            margin: 10px 0px;
+            box-shadow: 0px 0px 10px 0px #0000007c;
+        }
+
+        #display {
+            color: black;
+            padding-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        #dia, #tarde, #noite {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        #dia {
+            background: black url(imagens/pexels-dia.jpeg) center no-repeat fixed;
+            background-size: cover;
+            display: none;
+        }
+
+        #tarde {
+            background: black url(imagens/pexels-tarde.jpeg) center no-repeat fixed;
+            background-size: cover;
+            display: none;
+        }
+
+        #noite {
+            background: black url(imagens/pexels-noite.jpeg) center no-repeat fixed;
+            background-size: cover;
+            display: none;
+        }
+
+        @media screen and (min-width: 400px) {
+            #dia, #tarde, #noite {
+                width: 300px;
+                height: 300px;
+            }
+
+            .container {
+                width: 90vw;
+                max-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Hora do Dia</h1>
+        <div class="container">
+            <p id="display"></p>
+            <div id="dia"><!--Imagem nas CSS--></div>
+            <div id="tarde"><!--Imagem nas CSS--></div>
+            <div id="noite"><!--Imagem nas CSS--></div>
+        </div>
+        <p>@faraoti's_Projects</p>
+    </main>
+    <script>
+        var fundo = document.getElementsByTagName('body')[0]
+        var dia = document.querySelector('#dia')
+        var tarde = document.querySelector('#tarde')
+        var noite = document.querySelector('#noite')
+        var display = document.querySelector('#display')
+        var hora = new Date()
+        var agora = hora.getHours()
+        if (agora < 12) { // DIA
+            display.innerHTML = `Agora são <strong>${agora} horas</strong>. Bom dia!`
+            dia.style.display = 'block'
+            fundo.style.backgroundColor = '#D0D631'
+        } else if (agora < 18) { // TARDE
+            display.innerHTML = `Agora são <strong>${agora} horas</strong>. Boa tarde!`
+            tarde.style.display = 'block'
+            fundo.style.backgroundColor = '#D1A872'
+        } else { // NOITE
+            display.innerHTML = `Agora são <strong>${agora} horas</strong>. Boa noite!`
+            noite.style.display = 'block'
+            fundo.style.backgroundColor = '#70616C'
+        }
+    </script>
+</body>
+</html>
