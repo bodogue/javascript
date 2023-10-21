@@ -33,7 +33,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            border: 1px solid orange;
+            border: 2px solid #FF9D00;
             border-radius: 10px;
         }
 
@@ -44,7 +44,7 @@
         }
 
         h1 {
-            border-bottom: 1px solid orange;
+            border-bottom: 2px solid #ff9d00;
             margin: 0px -20px 10px -20px;
         }
 
@@ -109,9 +109,10 @@
             var txtv = document.querySelector('input#txtvel')
             var res = document.querySelector('div#res')
             var vel = Number(txtv.value)
-            res.innerHTML = `<p>Sua velocidade atual e de <strong>${vel}km/h</strong></p>`
             var multa = (vel - 60) * 11.5 + 50
             var multaReal = multa.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+            var ms = vel / 3.6
+            res.innerHTML = `<p>Sua velocidade atual e de <strong>${vel}km/h</strong> ou <strong>${ms.toFixed(1)}m/s</strong></p>`
             if (vel > 60) {
                 res.innerHTML += `<p>Voce passou acima da velocidade permitida. <strong>MULTADO</strong> em ${multaReal} Reais!</p>`
                 res.style.display = 'block'
