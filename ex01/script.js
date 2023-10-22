@@ -14,40 +14,40 @@ var agoraDiaSem = data.getDay()
 var agoraMes = data.getMonth()
 var agoraAno = data.getFullYear()
 switch (agoraMes) {
-    case 1:
+    case 0:
         agoraMes = 'Janeiro'
         break
-    case 2:
+    case 1:
         agoraMes = 'Fevereiro'
         break
-    case 3:
+    case 2:
         agoraMes = 'Março'
         break
-    case 4:
+    case 3:
         agoraMes = 'Abril'
         break
-    case 5:
+    case 4:
         agoraMes = 'Maio'
         break
-    case 6:
+    case 5:
         agoraMes = 'Junho'
         break
-    case 7:
+    case 6:
         agoraMes = 'Julho'
         break
-    case 8:
+    case 7:
         agoraMes = 'Agosto'
         break
-    case 9:
+    case 8:
         agoraMes = 'Setembro'
         break
-    case 10:
+    case 9:
         agoraMes = 'Outubro'
         break
-    case 11:
+    case 10:
         agoraMes = 'Novembro'
         break
-    case 12:
+    case 11:
         agoraMes = 'Dezembro'
 }
 switch (agoraDiaSem) {
