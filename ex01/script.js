@@ -4,6 +4,7 @@ var tarde = document.querySelector('#tarde')
 var noite = document.querySelector('#noite')
 var display = document.querySelector('#display')
 var h1Data = document.querySelector('#h1data')
+var h1Sem = document.querySelector('#h1Sem')
 var desejo = document.querySelector('#desejo')
 var data = new Date()
 var agoraHor = data.getHours()
@@ -49,6 +50,29 @@ switch (agoraMes) {
     case 12:
         agoraMes = 'Dezembro'
 }
+switch (agoraDiaSem) {
+    case 0:
+        agoraDiaSem = 'Domingo'
+        break
+    case 1:
+        agoraDiaSem = 'Segunda-feira'
+        break
+    case 2:
+        agoraDiaSem = 'Terça-feira'
+        break
+    case 3:
+        agoraDiaSem = 'Quarta-feira'
+        break
+    case 4:
+        agoraDiaSem = 'Quinta-feira'
+        break
+    case 5:
+        agoraDiaSem = 'Sexta-feira'
+        break
+    default:
+        agoraDiaSem = 'Sábado'
+}
+h1Sem.innerHTML = `${agoraDiaSem}`
 h1Data.innerHTML = `${agoraDia} de ${agoraMes} de ${agoraAno}`
 if (agoraHor < 12) { // DIA
     if (agoraMin < 10) {
