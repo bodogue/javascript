@@ -13,6 +13,7 @@ var agoraDia = data.getDate()
 var agoraDiaSem = data.getDay()
 var agoraMes = data.getMonth()
 var agoraAno = data.getFullYear()
+var zero = '0'
 switch (agoraMes) {
     case 0:
         agoraMes = 'Janeiro'
@@ -74,32 +75,24 @@ switch (agoraDiaSem) {
 }
 h1Sem.innerHTML = `${agoraDiaSem}`
 h1Data.innerHTML = `${agoraDia} de ${agoraMes} de ${agoraAno}`
+if (agoraHor < 10) {
+    agoraHor = zero + agoraHor
+}
+if (agoraMin < 10) {
+    agoraMin = zero + agoraMin
+}
+display.innerHTML = `<strong>${agoraHor}:${agoraMin}</strong>`
 if (agoraHor < 12) { // DIA
-    if (agoraMin < 10) {
-        display.innerHTML = `<strong>${agoraHor}:0${agoraMin}</strong>`
-    } else {
-        display.innerHTML = `<strong>${agoraHor}:${agoraMin}</strong>`
-    }
     display.style.backgroundColor = '#D0D631'
     desejo.innerHTML = '. Bom dia!'
     dia.style.display = 'block'
     fundo.style.backgroundColor = '#D0D631'
 } else if (agoraHor < 18) { // TARDE
-    if (agoraMin < 10) {
-        display.innerHTML = `<strong>${agoraHor}:0${agoraMin}</strong>`
-    } else {
-        display.innerHTML = `<strong>${agoraHor}:${agoraMin}</strong>`
-    }
     display.style.backgroundColor = '#D1A872'
     desejo.innerHTML = '. Boa tarde!'
     tarde.style.display = 'block'
     fundo.style.backgroundColor = '#D1A872'
 } else { // NOITE
-    if (agoraMin < 10) {
-        display.innerHTML = `<strong>${agoraHor}:0${agoraMin}</strong>`
-    } else {
-        display.innerHTML = `<strong>${agoraHor}:${agoraMin}</strong>`
-    }
     display.style.backgroundColor = '#70616C'
     desejo.innerHTML = '. Boa noite!'
     noite.style.display = 'block'
