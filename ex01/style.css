@@ -69,24 +69,20 @@ main {
     width: 200px;
     height: 200px;
     margin: auto;
+    background-size: cover;
+    display: none;
 }
 
 #dia {
     background: black url(imagens/pexels-dia.jpeg) center no-repeat fixed;
-    background-size: cover;
-    display: none;
 }
 
 #tarde {
     background: black url(imagens/pexels-tarde.jpeg) center no-repeat fixed;
-    background-size: cover;
-    display: none;
 }
 
 #noite {
     background: black url(imagens/pexels-noite.jpeg) center no-repeat fixed;
-    background-size: cover;
-    display: none;
 }
 
 @media screen and (min-width: 400px) {

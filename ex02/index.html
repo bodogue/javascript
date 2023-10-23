@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Verificador de Idade</h1>
+        </header>
+        <div class="container">
+            <form action="cadastro.php" method="get">
+                <p>
+                    <label for="Inasc">Ano de Nascimento</label>
+                    <input type="number" name="nasc" id="Inasc">
+                </p>
+                <p>Sexo:
+                    <input type="radio" name="radsex" id="sexom" checked onselect="sexom()">
+                    <label for="masc">Masculino</label>
+                    <input type="radio" name="radsex" id="sexof" onselect="sexof()">
+                    <label for="femi">Feminino</label>
+                </p>
+                <input type="button" value="Verificar" onclick="verificar()" id="button-verificar">
+            </form>
+            <div>
+                <div id="display"></div>
+            </div>
+        </div>
+        <footer>
+            <p>@Faraoti`s Projects.</p>
+        </footer>
+    </main>
+    
+    <script>
+        function verificar() {
+            var data = new Date()
+            var ano = data.getFullYear()
+            var nasc = document.querySelector('#Inasc')
+            var res = document.querySelector('#display')
+            var nasc = document.querySelector('#Inasc')
+            
+            if (nasc.value.length == 0 || nasc.value > ano) {
+                alert('[ERRO] Data inválida! Tente novamente.')
+            } else {
+                var fsex = document.getElementsByName('radsex')
+                var idade = ano - Number(nasc.value)
+                var genero = ''
+                var img = document.createElement('img')
+                img.setAttribute('id', 'foto')
+                if (fsex[0].checked) {
+                    genero = 'Homem'
+                    if (idade <= 10) {
+                        //crianca
+                        img.setAttribute('src', 'imagens/m-crianca.jpeg')
+                    } else if (idade <= 20) {
+                        //jovem
+                        img.setAttribute('src', 'imagens/m-jovem.jpeg')
+                    } else if (idade <= 50) {
+                        //adulto
+                        img.setAttribute('src', 'imagens/m-adulto.jpeg')
+                    } else {
+                        //idoso
+                        img.setAttribute('src', 'imagens/m-idoso.jpeg')
+                    }
+                } else {
+                    genero = 'Mulher'
+                    if (idade <= 10) {
+                        //crianca
+                        img.setAttribute('src', 'imagens/f-crianca.jpeg')
+                    } else if (idade <= 20) {
+                        //jovem
+                        img.setAttribute('src', 'imagens/f-jovem.jpeg')
+                    } else if (idade <= 50) {
+                        //adulto
+                        img.setAttribute('src', 'imagens/f-adulto.jpeg')
+                    } else {
+                        //idoso
+                        img.setAttribute('src', 'imagens/f-idoso.jpeg')
+                    }
+                }
+                res.innerHTML = `Detectamos  ${genero} de ${idade} anos`
+                res.appendChild(img)
+                
+            }
+        }
+        
+    </script>
+</body>
+</html>
