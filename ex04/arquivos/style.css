@@ -5,6 +5,7 @@
     padding: 0%;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
 }
 
 html, body {
@@ -33,12 +34,33 @@ section {
     padding: 20px;
 }
 
-#res {
-    min-width: 20%;
+input {
+    border: 2px solid #418bc4;
+    border-radius: 10px;
+    height: 30px;
+    padding: 0px 10px;
+}
+
+input[type=button] {
+    background-color: #99c3e3;
+}
+
+input[type=button]:hover {
+    color: white;
+    background-color: #418bc4;
+    text-shadow: 1px 1px 2px #00000070;
+}
+
+section > form, section > div {
+    margin: auto;
+}
+    
+#tab {
+    font-size: 1em;
+    text-align: center;
     width: fit-content;
     border: 1px solid lightgray;
     padding: 0px 15px;
-    min-height: 185px;
 }
 
 header, footer {

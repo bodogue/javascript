@@ -30,7 +30,8 @@ main {
 
 .container {
     background-color: white;
-    width: 500px;
+    width: 90vw;
+    max-width: 500px;
     border-radius: 10px;
     padding: 30px 15px;
     box-shadow: 0px 0px 10px 8px #0000002b;
@@ -62,14 +63,3 @@ img {
     background-color: #a5c8f5;
 }
 
-#imagens > div {
-    width: 300px;
-    height: 300px;
-    margin: auto;
-    border-radius: 50%;
-    background-color: black; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
